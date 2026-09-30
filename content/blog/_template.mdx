@@ -1,0 +1,56 @@
+---
+# ───────────────────────────────────────────────────────────────
+# HOW TO ADD A NEW BLOG POST (MDX)
+# 1. Copy this file and rename it, e.g. "my-new-post.mdx".
+#    The file name becomes the URL: /blog/my-new-post
+#    (Files starting with "_" like this one are ignored.)
+# 2. Put the cover image in  public/blog/  and set "cover" below.
+# 3. Fill in the fields, write the article under the second "---".
+# 4. Commit and push to GitHub. Vercel publishes it in ~1–2 minutes.
+# ───────────────────────────────────────────────────────────────
+title: "Your post title (aim for under 70 characters)"
+excerpt: "One or two sentences shown on the blog list and in Google results."
+date: "2026-10-01"              # Publish date (YYYY-MM-DD). Future dates stay hidden until that day.
+category: "SEO & Local Search"  # Use an existing category name to group posts together
+author: "Abbas"
+authorRole: "Signature Marketing & Tech"
+authorImage: "/images/team/abbas.jpg"   # Optional square photo in public/images/team/
+cover: "/blog/your-cover-image.png"  # 1600×900 works best
+coverAlt: "Describe the cover image for screen readers and Google"
+featured: false                 # true = pin as the featured post on /blog
+draft: true                     # Remove this line (or set false) when ready to publish
+# Optional SEO overrides:
+# seoTitle: "Custom Google title"
+# seoDescription: "Custom Google description (140–160 characters)"
+# noIndex: true                 # Hide this post from search engines
+---
+
+Intro paragraph. Write normally — **bold**, *italic*, and [links](/services/seo) all work.
+
+## A main heading (appears in the table of contents)
+
+Regular text. Leave a blank line between paragraphs.
+
+### A smaller heading
+
+- Bullet point
+- Another bullet point
+
+1. Numbered step
+2. Another step
+
+> A quote or key takeaway.
+
+![Image description for screen readers](/blog/your-image.png "Optional caption")
+
+| Column | Column |
+| --- | --- |
+| Cell | Cell |
+
+<Callout type="tip" title="Optional title">
+  A highlighted tip. Use type="warning" for a caution box.
+</Callout>
+
+<Cta href="/contact" label="Get a free consultation">
+  A short call to action at the end of the article.
+</Cta>
