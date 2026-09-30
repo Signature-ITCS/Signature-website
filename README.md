@@ -16,7 +16,9 @@ Before deploying, run `npm run build` to create a production build and `npm run 
 ## Deploy on Vercel
 
 1. Push this folder to a GitHub repository and import it in Vercel. The framework is detected automatically.
-2. Set the environment variable `NEXT_PUBLIC_SITE_URL` to the live domain, e.g. `https://signature24hrs.com` (see `.env.example`).
+2. In Vercel → Settings → Environment Variables, click **Import .env** and choose the project's local `.env` file (it is never committed). It contains:
+   `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET`, `SANITY_REVALIDATE_SECRET`,
+   `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASS`, `SMTP_FROM`, `CONTACT_TO`, `CONTACT_BCC`.
 3. Add the domain in Vercel → Project → Domains.
 4. Submit `https://<domain>/sitemap.xml` in Google Search Console.
 
@@ -69,7 +71,7 @@ Sanity posts are written in **Sanity Studio**, which is built into the site at `
 1. Create a free account at https://www.sanity.io and create a new project. Use the dataset name `production` and set its visibility to **Public**. With a public dataset, the website can read published posts without a token, while drafts stay private.
 2. Copy the **Project ID** from https://www.sanity.io/manage.
 3. In the project's **API → CORS origins**, add `http://localhost:3000` and your live domain (e.g. `https://signature24hrs.com`). Tick **Allow credentials** for both.
-4. Add these environment variables locally (`.env.local`) and in Vercel:
+4. Add these environment variables to the local `.env` file and in Vercel:
    ```
    NEXT_PUBLIC_SANITY_PROJECT_ID=your-project-id
    NEXT_PUBLIC_SANITY_DATASET=production
@@ -114,7 +116,7 @@ The form sends enquiries straight to `info@signature24hrs.com` through the compa
 - To send a hidden copy of every enquiry to other addresses, set `CONTACT_BCC` (comma-separated).
 - Spam protection: a hidden honeypot field, a minimum time-on-form check and a per-IP rate limit.
 - Inputs are validated on the server and HTML-escaped in the email.
-- SMTP settings (see `.env.example`) are server-only. Set `SMTP_PASS` in `.env.local` and in Vercel → Settings → Environment Variables, and never commit it.
+- SMTP settings are server-only. Keep `SMTP_PASS` in the local `.env` file and in Vercel → Settings → Environment Variables, and never commit it.
 
 ## Before launch
 
